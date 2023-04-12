@@ -5,8 +5,8 @@
 
 ## How to run
 <br />
-- Clone the repositry using the following command: ```https://github.com/NimbleNitesh/Function.git```
-- Change the current directory using following command: ```cd Function```
-- Run ```npm i``` to install necessary dependancies.
-- Go to ```index.test.js``` and edit it with you test case and your expected solution.
-- Run ```npm test``` on the terminal
+-Clone the repositry using the following command: ```https://github.com/NimbleNitesh/Function.git```
+-Change the current directory using following command: ```cd Function```
+-Run ```npm i``` to install necessary dependancies.
+-Go to ```index.test.js``` and edit it with you test case and your expected solution.
+-Run ```npm test``` on the terminal
