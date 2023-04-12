@@ -47,36 +47,19 @@ function solve(D) {
     for (let k = i + 1; k < j; k++) ans[k] = ans[i] + (k - i) * d;
     i = j;
   }
-  console.log("Mon: " + ans[0]);
-  console.log("Tue: " + ans[1]);
-  console.log("Wed: " + ans[2]);
-  console.log("Thu: " + ans[3]);
-  console.log("Fri: " + ans[4]);
-  console.log("Sat: " + ans[5]);
-  console.log("Sun: " + ans[6]);
+  let res = { Mon: 0, Tue: 0, Wed: 0, Thu: 0, Fri: 0, Sat: 0, Sun: 0 };
+  res["Mon"]=ans[0];
+  res["Tue"]=ans[1];
+  res["Wed"]=ans[2];
+  res["Thu"]=ans[3];
+  res["Fri"]=ans[4];
+  res["Sat"]=ans[5];
+  res["Sun"]=ans[6];
+  return res;
 }
 
 // Main program
 /**
- * Just Run node index.js into the terminal.
- * Here I am taking the input from the terminal. 
- * Sample Input would be like:
-        2020-01-01 4
-        2020-01-02 4
-        2020-01-03 6
-        2020-01-04 8
-        2020-01-05 2
-        2020-01-06 -6
-        2020-01-07 2
-        2020-01-08 -2
- * Sample Output would be like:
-        Mon: -6
-        Tue: 2
-        Wed: 2
-        Thu: 4
-        Fri: 6
-        Sat: 8
-        Sun: 2
 
  * If you wish to directly initialise the dictionary you may remove the below lines and write this
         const D = {
@@ -87,31 +70,4 @@ function solve(D) {
         solve(D);
  */
 
-const readline = require("readline");
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-let numValues;
-const dict = {};
-
-rl.question("How many values do you want to input? ", function (answer) {
-  numValues = parseInt(answer);
-  rl.prompt();
-});
-
-rl.on("line", function (input) {
-  if (numValues > 0) {
-    const [date, value] = input.split(" ");
-    dict[date] = parseInt(value);
-    numValues--;
-    if (numValues === 0) {
-      rl.close();
-      solve(dict);
-    } else {
-      rl.prompt();
-    }
-  }
-});
+module.exports=solve;
